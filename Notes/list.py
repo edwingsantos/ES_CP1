@@ -21,4 +21,4 @@ board = [[1,2,3],
          ]
 
 
-#tuple ordered, not vhageable
+#tuple ordered, not chageable
