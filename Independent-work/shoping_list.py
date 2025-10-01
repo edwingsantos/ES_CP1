@@ -1,10 +1,9 @@
 # ES 1 Shopping List Manager
 
 shoping_list = []
-
+action = input("What do you want to be in your shoping list?: ")
+shoping_list.append(action)
 while True:
-    action = input("What do you want to be in your shoping list?: ")
-    shoping_list.append(action)
     more = input("Would you wish to add or delete more stuff? (yes/no):  ")
     if more == "yes":
         action = input("What else do you want to be in your shoping list?:")
