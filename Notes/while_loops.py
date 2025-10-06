@@ -9,6 +9,7 @@ import time
 import random
 goose = random.randint(1,20)
 count = 1
+#count is the amount of times the loop has been through
 
 while True:
     if count == goose:
