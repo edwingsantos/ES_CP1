@@ -11,7 +11,7 @@ print("Hi, you are going to make a password, you need at least 8 characters long
 
 
 #make a list fo the special chraracters 
-special_characters = "!""@""#""$""%""^""&""*""()""_""+""-""=""[]""{}""|"";"":"","".""<"">""?"
+special_characters = "!@#$%^&*()_+-=[]{}|;:,.<>?"
 
 
 #score is going to keep track of my score
