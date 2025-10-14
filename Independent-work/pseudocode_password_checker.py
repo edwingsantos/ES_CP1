@@ -46,9 +46,10 @@ for N in password:
 #make an else statement if is not true
     else:
         print("You dont have a lower case")
+        break
 for N in password:
 #make another if statemnt for upper case now 
-    if password.isupper():
+    if password.isupper() != True:
         print("you have a upper case")
 #add a point to your score
         score+=1
@@ -57,6 +58,7 @@ for N in password:
 #make an else statement if is not true    
     else:
         print("You dont have a upper case")
+        break
 
 for N in password:
 #Now make one but for special characters
@@ -70,10 +72,11 @@ for N in password:
 #make an else statement if is not true
     else:
         print("You dont have a special chracter")
+        break 
 for N in password:
 #now make one for the number
 #check if there is a number in my password
-    if password.isdigit():
+    if password.isdigit() != True:
         print("You have a number")
         #add a point
         score+=1
@@ -82,3 +85,13 @@ for N in password:
     #make an else statement if is not true
     else:
         print("You dont have a number")
+        break
+#write the scores according to the points had
+if score <= 2:
+    print("your password is very weak, please create a new one ")
+if score == 3:
+    print("your password is weak")
+if score == 4:
+    print("moderate password")
+if score == 5:
+    print("you have a strong password!!")
