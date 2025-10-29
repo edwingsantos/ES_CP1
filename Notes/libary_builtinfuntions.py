@@ -11,8 +11,10 @@ t.fillcolor(random.choice(colors))
 
 t.begin_fill()
 for x in range(1,4):
+    t.speed(100)
     t.forward(side)
     t.right(90)
+
 t.end_fill()
 
 t.penup()
