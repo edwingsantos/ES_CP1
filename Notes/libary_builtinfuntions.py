@@ -9,7 +9,7 @@ t.shape("turtle")
 t.shapesize(12)
 t.fillcolor(random.choice(colors))
 
-t.begin_fill()
+t.begin_fill(4)
 for x in range(1,4):
     t.speed(100)
     t.forward(side)
