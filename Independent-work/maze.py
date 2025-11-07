@@ -7,7 +7,7 @@ import turtle as t
 m = t.Turtle()
 wn = t.Screen()
 wn.setup(1300,1300)
-m.speed("fastest")
+m.speed(10)
 #make the outline of the maze
 m.left(90)
 m.forward(600)
@@ -32,7 +32,6 @@ grid_rows = [[random.randint(0,1),random.randint(0,1),random.randint(0,1),random
              [random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1)],
              [random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1)],
              [random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1)],
-             [random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1)]
              ]
 #make the same but for columbs now
 grid_columbs = [[random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1)],
@@ -40,32 +39,30 @@ grid_columbs = [[random.randint(0,1),random.randint(0,1),random.randint(0,1),ran
              [random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1)],
              [random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1)],
              [random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1)],
-             [random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1),random.randint(0,1)]
              ]
-#make a varable called rock that equals 1
+#make the turtle to go to the cornates you want by turning 
 m.right(90)
     #and forward 100
 m.forward(500)
 m.right(90)
-#make a while loop that is rock is less than 6 then the code would run
+#make a variable for x, and if its 6 then it would break 
 x=0
+
+#make a loop so we dont have to make random randint many times 
 while True:
     if x == 6:
         break
-    #let the turlte go right 90*
-
     #if the random number is 1 is pendown and forward 100
     if grid_rows[0][x] == 1:
         m.pendown()
         m.forward(100)
-        #and make it stop once it is at the end where the line is 
-
+    #make this again but for columbs
     if grid_rows[0][x] == 0:
         m.penup()
         m.forward(100)
-        #and make it stop once it is at the end where the line is 
+
     x += 1
-    #make this again but for columbs
+
 m.right(90)
 m.forward(100)
 m.right(90)
@@ -73,14 +70,11 @@ x=0
 while True:
     if x == 6:
         break
-    #let the turlte go right 90*
-
     #if the random number is 1 is pendown and forward 100
     if grid_rows[1][x] == 1:
         m.pendown()
         m.forward(100)
-        #and make it stop once it is at the end where the line is 
-
+    #make this again but for columbs
     if grid_rows[1][x] == 0:
         m.penup()
         m.forward(100)
@@ -93,14 +87,11 @@ x=0
 while True:
     if x == 6:
         break
-    #let the turlte go right 90*
-
     #if the random number is 1 is pendown and forward 100
     if grid_rows[2][x] == 1:
         m.pendown()
         m.forward(100)
-        #and make it stop once it is at the end where the line is 
-
+    #make this again but for columbs
     if grid_rows[2][x] == 0:
         m.penup()
         m.forward(100)
@@ -113,14 +104,11 @@ x=0
 while True:
     if x == 6:
         break
-    #let the turlte go right 90*
-
     #if the random number is 1 is pendown and forward 100
     if grid_rows[3][x] == 1:
         m.pendown()
         m.forward(100)
-        #and make it stop once it is at the end where the line is 
-
+    #make this again but for columbs
     if grid_rows[3][x] == 0:
         m.penup()
         m.forward(100)
@@ -133,14 +121,11 @@ x=0
 while True:
     if x == 6:
         break
-    #let the turlte go right 90*
-
     #if the random number is 1 is pendown and forward 100
     if grid_rows[4][x] == 1:
         m.pendown()
         m.forward(100)
-        #and make it stop once it is at the end where the line is 
-
+    #make this again but for columbs
     if grid_rows[4][x] == 0:
         m.penup()
         m.forward(100)
@@ -155,19 +140,81 @@ x=0
 while True:
     if x == 6:
         break
-    #let the turlte go right 90*
-
     #if the random number is 1 is pendown and forward 100
     if grid_columbs[0][x] == 1:
         m.pendown()
         m.forward(100)
-        #and make it stop once it is at the end where the line is 
-
+#make this again but for columbs
     if grid_columbs[0][x] == 0:
         m.penup()
         m.forward(100)
     x += 1
-
-
+m.left(90)
+m.forward(100)
+m.left(90)
+x=0
+while True:
+    if x == 6:
+        break
+    #if the random number is 1 is pendown and forward 100
+    if grid_columbs[1][x] == 1:
+        m.pendown()
+        m.forward(100)
+    #make this again but for columbs
+    if grid_columbs[1][x] == 0:
+        m.penup()
+        m.forward(100)
+    x += 1
+m.right(90)
+m.forward(100)
+m.right(90)
+x=0
+while True:
+    if x == 6:
+        break
+    #if the random number is 1 is pendown and forward 100
+    if grid_columbs[2][x] == 1:
+        m.pendown()
+        m.forward(100)
+    #make this again but for columbs
+    if grid_columbs[2][x] == 0:
+        m.penup()
+        m.forward(100)
+    x += 1
+m.left(90)
+m.forward(100)
+m.left(90)
+x=0
+while True:
+    if x == 6:
+        break
+    #if the random number is 1 is pendown and forward 100
+    if grid_columbs[3][x] == 1:
+        m.pendown()
+        m.forward(100)
+    #make this again but for columbs
+    if grid_columbs[3][x] == 0:
+        m.penup()
+        m.forward(100)
+    x += 1
+m.right(90)
+m.forward(100)
+m.right(90)
+x=0
+while True:
+    if x == 6:
+        break
+    #if the random number is 1 is pendown and forward 100
+    if grid_columbs[4][x] == 1:
+        m.pendown()
+        m.forward(100)
+    #make this again but for columbs
+    if grid_columbs[4][x] == 0:
+        m.penup()
+        m.forward(100)
+    x += 1
+m.hideturtle()
 
 t.done()
+
+s = t.Turtle()
