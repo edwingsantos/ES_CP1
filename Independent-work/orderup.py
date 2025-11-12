@@ -34,9 +34,41 @@ print("")
 print("DRINKS")
 #loop keys in drinks
 for key in drinks.keys():
+    #repeat last steps but for drinks and sides 
     print(f"{key} is {drinks[key]}")
 print("")
 print("SIDES")
 for key in sides.keys():
     print(f"{key} is {sides[key]}")
 print("")
+#make a list as your order so it safes 
+order = []
+#ask the user what burger they want 
+user_int = input("what would you like you burger to be ")
+#make a loop for keys in burgers.keys()
+for key in burgers.keys():
+    #make an if statement that if key is equal to simple burger
+    if key == "simple burger":
+        #append the type of burger they chose 
+        order.append('simple burger')
+        #and also append the price
+        order.append(burgers["simple burger"])
+
+    elif key == "cheeseburger":
+        #append the type of burger they chose 
+        order.append('cheeseburger')
+        #and also append the price
+        order.append(burgers["cheeseburger"])
+
+
+    elif key == "double bacon cheeseburger":
+        #append the type of burger they chose 
+        order.append('double bacon cheeseburger')
+        #and also append the price
+        order.append(burgers["double bacon cheeseburger"])
+
+    else:
+        print("choose an actual thing from the menu")
+
+
+print(order)
