@@ -44,31 +44,37 @@ print("")
 #make a list as your order so it safes 
 order = []
 #ask the user what burger they want 
-user_int = input("what would you like you burger to be ")
-#make a loop for keys in burgers.keys()
-for key in burgers.keys():
-    #make an if statement that if key is equal to simple burger
-    if key == "simple burger":
-        #append the type of burger they chose 
-        order.append('simple burger')
-        #and also append the price
-        order.append(burgers["simple burger"])
+burger_order = input("what would you like you burger to be ")
+if burger_order == "cheeseburger" or burger_order == "double bacon cheeseburger" or burger_order == "simple burger":
+    True 
+    order.append(burger_order)
+else:
+    False 
+    print("can you please order somthing from the menu")
 
-    elif key == "cheeseburger":
-        #append the type of burger they chose 
-        order.append('cheeseburger')
-        #and also append the price
-        order.append(burgers["cheeseburger"])
+side_order =  input("what would you like your first side to be ")
+if side_order == "salad" or side_order == "fries" or side_order == "onion rings" or side_order == "sweet potatoe":
+    True 
+    order.append(side_order)
+    
+else:
+    False 
+    print("can you please order somthing from the menu")
 
+side_order2 =  input("what would you like your second side to be ")
+if side_order2 == "salad" or side_order2 == "fries" or side_order2 == "onion rings" or side_order2 == "sweet potatoe":
+    True 
+    order.append(side_order2)
+else:
+    False 
+    print("can you please order somthing from the menu")
 
-    elif key == "double bacon cheeseburger":
-        #append the type of burger they chose 
-        order.append('double bacon cheeseburger')
-        #and also append the price
-        order.append(burgers["double bacon cheeseburger"])
-
-    else:
-        print("choose an actual thing from the menu")
-
-
+drinks =  input("what would you like your drink to be ")
+if drinks == "coke " or drinks == "sprite" or drinks == "root beer":
+    True 
+    order.append(drinks)
+else:
+    False 
+    print("can you please order somthing from the menu")
 print(order)
+
