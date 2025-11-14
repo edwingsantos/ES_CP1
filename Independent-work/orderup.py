@@ -51,36 +51,43 @@ if burger_order == "cheeseburger" or burger_order == "double bacon cheeseburger"
     True 
     #Then add the input to the order
     order.append(burger_order)
+    #append the price of the burger
+    order.append(burgers[burger_order])
 #make an esle statment 
 else:
     #but if its false
     False 
     #print to put somthing from the menu
     print("can you please order something from the menu")
-
+#repat the same thing for side number one
 side_order =  input("what would you like your first side to be: ")
 if side_order == "salad" or side_order == "fries" or side_order == "onion rings" or side_order == "sweet potatoe":
     True 
     order.append(side_order)
-    
+    order.append(sides[side_order])
 else:
     False 
     print("can you please order somthing from the menu")
-
+#repeat for side number 2
 side_order2 =  input("what would you like your second side to be: ")
 if side_order2 == "salad" or side_order2 == "fries" or side_order2 == "onion rings" or side_order2 == "sweet potatoe":
     True 
     order.append(side_order2)
+    order.append(sides[side_order2])
 else:
     False 
     print("can you please order somthing from the menu")
-
-drinks =  input("what would you like your drink to be: ")
+#repeat for the drink order
+drinks_order =  input("what would you like your drink to be: ")
 if drinks == "coke" or drinks == "sprite" or drinks == "root beer":
     True 
     order.append(drinks)
+    order.append(drinks[drinks_order])
 else:
     False 
     print("can you please order somthing from the menu")
 print(order)
-burgers["burger_order"]
+#make the total price add the things the user selecter
+total_price = burgers[burger_order] + sides[side_order] + sides[side_order2] + drinks[drinks_order]
+#print that the order is {total_price:.2f}
+print(f"your total price is {total_price:.2f}")
