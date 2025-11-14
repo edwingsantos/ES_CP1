@@ -43,16 +43,22 @@ for key in sides.keys():
 print("")
 #make a list as your order so it safes 
 order = []
-#ask the user what burger they want 
-burger_order = input("what would you like you burger to be ")
+#ask the user what burger they want as a variabl called burger order
+burger_order = input("what would you like you burger to be: ")
+#make and if statement that if the burger order equals one of the things on the menu
 if burger_order == "cheeseburger" or burger_order == "double bacon cheeseburger" or burger_order == "simple burger":
+    #makes it true
     True 
+    #Then add the input to the order
     order.append(burger_order)
+#make an esle statment 
 else:
+    #but if its false
     False 
-    print("can you please order somthing from the menu")
+    #print to put somthing from the menu
+    print("can you please order something from the menu")
 
-side_order =  input("what would you like your first side to be ")
+side_order =  input("what would you like your first side to be: ")
 if side_order == "salad" or side_order == "fries" or side_order == "onion rings" or side_order == "sweet potatoe":
     True 
     order.append(side_order)
@@ -61,7 +67,7 @@ else:
     False 
     print("can you please order somthing from the menu")
 
-side_order2 =  input("what would you like your second side to be ")
+side_order2 =  input("what would you like your second side to be: ")
 if side_order2 == "salad" or side_order2 == "fries" or side_order2 == "onion rings" or side_order2 == "sweet potatoe":
     True 
     order.append(side_order2)
@@ -69,12 +75,12 @@ else:
     False 
     print("can you please order somthing from the menu")
 
-drinks =  input("what would you like your drink to be ")
-if drinks == "coke " or drinks == "sprite" or drinks == "root beer":
+drinks =  input("what would you like your drink to be: ")
+if drinks == "coke" or drinks == "sprite" or drinks == "root beer":
     True 
     order.append(drinks)
 else:
     False 
     print("can you please order somthing from the menu")
 print(order)
-
+burgers["burger_order"]
