@@ -6,3 +6,6 @@ import random
 denominator = random.randint(0,5)
 
 print(10/denominator)
+
+import time
+print(time)
