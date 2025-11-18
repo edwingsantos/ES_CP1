@@ -17,3 +17,4 @@ print(f"{number1}/{number2}={result4:.2f}")
 print(f"{number1}//{number2}={result5:.2f}")
 print(f"{number1}%{number2}={result6:.2f}")
 print(f"{number1}**{number2}={result7:.2f}")
+#hi my name is ksl;afd
