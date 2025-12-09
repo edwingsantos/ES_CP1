@@ -28,6 +28,7 @@ def bedroom():
             actions_room.remove("rest")
 
             stats["happiness"] += 10
+            stats["intelligence"] -= 5
             print(stats)
 
 
