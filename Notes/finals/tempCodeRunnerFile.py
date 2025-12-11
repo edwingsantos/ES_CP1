@@ -1,2 +1,2 @@
-
-            print(actions_room)
+")
+            actions_room.remove("drawing")
