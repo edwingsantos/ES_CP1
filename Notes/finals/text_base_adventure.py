@@ -126,6 +126,7 @@ def school(stats):
                     num = random.randint(1,25)
                     info_gathered[num] = information[num]
                     print(f"Information has been gathered: {information[num]}")
+            break
 
         elif choice =="get in a fight":
             fight = random.randint(1,2)
@@ -152,7 +153,7 @@ def school(stats):
                 stats["emotional_damage"] +=15
                 if stats["emotional_damage"] >= 100:
                     stats["depression"] +=20
-
+            break
         else:
             print("Maybe you spelled something wrong, you might wanna check again.")
             continue
@@ -172,7 +173,6 @@ def friends_house(stats):
                 print("You are playing minecraft, it is a chill game")
                 print("Happiness +10")
                 stats["happiness"] +=10
-                break
             else:
                 print("You and your friend are playing call of duty, you guys are fighting now")
                 print("Happiness -10")
@@ -180,32 +180,131 @@ def friends_house(stats):
                 if stats["happiness"] <= 0:
                     stats["depression"] +=20
                 print("Emotional damage +10")
-                stats["emotional_damage"]
+                stats["emotional_damage"] +=10
                 if stats["emotional_damage"] >= 100:
                     stats["depression"] +=20
                 break
-        if choice == "talk":
+        elif choice == "talk":
             print("You guys are having a peacefull converstaion")
             print("Happiness +10")
             stats["happiness"]+=10
             break
+        elif choice == "start a fight":
+            print("Welp, you started a fight, your friendship is not as strong anymore.")
+            print("Social life -10")
+            print("Happines -5")
+            stats["social_life"] -=10
+            if stats["social_life"] <= 0:
+                    stats["depression"] +=20
+            stats["happiness"] -=5
+            if stats["happiness"] <= 0:
+                    stats["depression"] +=20
+            break
+        else:
+            print("maybe you selected something wrong, plese select again")
+            continue
     return
 
 def kitchen(stats):
-    #Make the fight with your mom  the first time you enter the kitchen , every time you enter it you have to fight, but you get more resources
     print("You have entered the the kitchen")
+    actions_kitchen = ["eat","cook","make matcha","check fridge"]
+    print(f"The actions you can do are the following:")
+    for action in actions_kitchen:
+        print(action)
+    while True:
+        choice = input("what would you like to do now")
+        if choice == "eat":
+            print("You are feelling great and you are happy.")
+            print("Happiness +10. Emotional damage -5")
+            stats["happiness"]+=10
+            stats["emotional_damage"]-=5
+            break
+        elif choice == "cook":
+            print("You are crazy good at cooking")
+            print("Intelligence +5.  happiness +5")
+            stats["intelligence"]+=5
+            stats["happiness"]+=5
+            break
+        elif choice == "make mathcha":
+            print("You are the biggest perfomative person!!, you are sooo tuff")
+            print("Intelligence +5, social life +10, happiness +5, emotional damage -5")
+            stats["intelligence"]+=5
+            stats["social_life"]+=10
+            stats["happiness"]+=5
+            stats["emotional damage"]-=5
+        elif choice == "check fridge":
+            print("you check the fridge and theres nothing :(")
+            print("happiness -5")
+            stats["happiness"]-=5
+            if stats["happiness"] <= 0:
+                    stats["depression"] +=20
+            break
+        else:
+            print("Maybe you spelled something wrong, please select something right")
+        print("Oh no. Your mom is mad at you for not cleaning the dishes.")
+        dishes1 = input("What would you like to say?: A) @$$#!  B) I will do them in a sec  C) I'm sorry, please select the letter").upper()
+        if dishes1 == "A":
+            print("Your mom is so mad at you she grounded you for a week, you can't go out, but you felt good.")
+            print("Emotional damage +15. Happiness +1")
+            stats["emotional_damage"] +=10
+            if stats["emotional_damage"] >= 100:
+                    stats["depression"] +=20
+            stats["happiness"]+=15
+            break
+        elif dishes1 == "B":
+            print("She said that now is not the time, she grounded you for a day")
+            print("Emotional damage +15")
+            stats["emotional_damage"] +=15
+            if stats["emotional_damage"] >= 100:
+                stats["depression"] +=20
+            break
+        elif dishes1 == "C":
+            print("She is way more mad at you for saying sorry and not fixing the problem.")
+            print("Emotional damage +10")
+            stats["emotional_damage"] +=10
+            if stats["emotional_damage"] >= 100:
+                stats["depression"] +=20
+        else:
+            print("Maybe you selected an wrong option please select an actual opition.")
+    return
 
 def cementary(stats):
     print("You have entered the cementary")
+    actions_cementary = ["talk to dead dad","cry","curse to dad for not being there for you"]
+    print(f"The actions you can do are the following:")
+    for action in actions_cementary:
+        print(action)
+    while True:
+        choice = input("What would you like to do now")
+
 
 def walmart(stats):
     print("You have entered walmart")
+    actions_walmart = ["Shout to cashier","grab food","steal"]
+    print(f"The actions you can do are the following")
+    for action in actions_walmart:
+        print(action)
+    while True:
+        choice = input("What would you like to do now")
+
 
 def park(stats):
     print("You are at the park")
+    actions_park = ["chill","run","feed ducks"]
+    print(f"Then actions you can do are the following: ")
+    for action in actions_park:
+        print(action)
+        while True:
+            choice = input("What would you like to do now")
 
 def backyard(stats):
     print("You are in your backyard")
+    actions_backyard = ["go in the trampoline","read","mow the grass"]
+    print(f"Then actions you can do are the following: ")
+    for action in actions_backyard:
+        print(action)
+        while True:
+            choice = input("What would you like to do now")
 
 print("This game is about you as a teenage self, the goal of this game is to win an argument against your ex in a text message fight about whose fault it was about the break up. In this game you will go through what it feels to be a Ucas student, you have a crazy mom and a crazy ex that is still bugging you about the break up. The obstacles in this game are keeping your grades acceptable, having a social life, doing most of your chores around the house, and dealing with the people in your life. You win this game by defeating the final boss, your ex, the two of you are going to be in an argument of whose fault was it about the break up, the life would be measured as emotional damage, the better you handle the obstacles, the less emotional damage you have, (by the way, if you read this i owe you  a penny) during the fight you can bring up stuff your ex did to you or how bad she was, you can find these useful things in the rooms around the house hidden. Finally, the game would give you options to choose from, and you have to choose the best one. Good luck and hope you live. :)")
 while True:
