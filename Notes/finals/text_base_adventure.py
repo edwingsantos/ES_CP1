@@ -104,102 +104,8 @@ def school(stats):
             print("Happiness +5")
             stats["happiness"] +=5
             num = random.randint(1,25)
-            if num == 1:
-                print(f"You have gathered info for checking your phone. {information[1]}")
-                info_gathered[1] = "You hit me!!"
-                print(f"{info_gathered[1]}")
-            elif num == 2:
-                print(f"You have gathered info for checking your phone. {information[2]}")
-                info_gathered[2] = "You cheated on me multiple times!!"
-                print(f"{info_gathered[2]}")
-            elif num == 3:
-                print(f"You have gathered info for checking your phone. {information[3]}")
-                info_gathered[3] = "You lied a lot."
-                print(f"{info_gathered[3]}")
-            elif num == 4:
-                print(f"You have gathered info for checking your phone. {information[4]}")
-                info_gathered[4] = "You ghosted me."
-                print(f"{info_gathered[4]}")
-            elif num == 5:
-                print(f"You have gathered info for checking your phone. {information[5]}")
-                info_gathered[6] = "You talked to your ex."
-                print(f"{info_gathered[6]}")
-            elif num == 7:
-                print(f"You have gathered info for checking your phone. {information[7]}")
-                info_gathered[7] = "You blamed me."
-                print(info_gathered[7])
-            elif num == 8:
-                print(f"You have gathered info for checking your phone. {information[8]}")
-                info_gathered[8] = "You embarrassed me."
-                print(info_gathered[8])
-            elif num == 9:
-                print(f"You have gathered info for checking your phone. {information[9]}")
-                info_gathered[9] = "You flirted with others."
-                print(info_gathered[9])
-            elif num == 10:
-                print(f"You have gathered info for checking your phone. {information[10]}")
-                info_gathered[10] = "You ignored me."
-                print(info_gathered[10])
-            elif num == 11:
-                print(f"You have gathered info for checking your phone. {information[11]}")
-                info_gathered[11] = "You made me anxious."
-                print(info_gathered[11])
-            elif num == 12:
-                print(f"You have gathered info for checking your phone. {information[12]}")
-                info_gathered[12] = "You broke promises."
-                print(info_gathered[12])
-            elif num == 13:
-                print(f"You have gathered info for checking your phone. {information[13]}")
-                info_gathered[13] = "You made me doubt myself."
-                print(info_gathered[13])
-            elif num == 14:
-                print(f"You have gathered info for checking your phone. {information[14]}")
-                info_gathered[14] = "You made fun of me."
-                print(info_gathered[14])
-            elif num == 15:
-                print(f"You have gathered info for checking your phone. {information[15]}")
-                info_gathered[15] = "You didnt support me."
-                print(info_gathered[15])
-            elif num == 16:
-                print(f"You have gathered info for checking your phone. {information[16]}")
-                info_gathered[16] = "You tried to control me."
-                print(info_gathered[16])
-            elif num == 17:
-                print(f"You have gathered info for checking your phone. {information[17]}")
-                info_gathered[17] = "You didnt listen."
-                print(info_gathered[17])
-            elif num == 18:
-                print(f"You have gathered info for checking your phone. {information[18]}")
-                info_gathered[18] = "You started fights."
-                print(info_gathered[18])
-            elif num == 19:
-                print(f"You have gathered info for checking your phone. {information[19]}")
-                info_gathered[19] = "You didnt care enough."
-                print(info_gathered[19])
-            elif num == 20:
-                print(f"You have gathered info for checking your phone. {information[20]}")
-                info_gathered[20] = "You guilt-tripped me."
-                print(info_gathered[20])
-            elif num == 21:
-                print(f"You have gathered info for checking your phone. {information[21]}")
-                info_gathered[21] = "You used my insecurities."
-                print(info_gathered[21])
-            elif num == 22:
-                print(f"You have gathered info for checking your phone. {information[22]}")
-                info_gathered[22] = "You compared me."
-                print(info_gathered[22])
-            elif num == 23:
-                print(f"You have gathered info for checking your phone. {information[23]}")
-                info_gathered[23] = "You stopped trying."
-                print(info_gathered[23])
-            elif num == 24:
-                print(f"You have gathered info for checking your phone. {information[24]}")
-                info_gathered[24] = "You assumed the worst."
-                print(info_gathered[24])
-            elif num == 25:
-                print(f"You have gathered info for checking your phone. {information[25]}")
-                info_gathered[25] = "You made me feel alone."
-                print(info_gathered[25])
+            info_gathered[num] = information[num]
+            print(f"Information has been gathered: {information[num]}")
             break
         elif choice == "sneak into principals ofice":
             print("You sneaked into the principals office to find aswers ")
@@ -220,6 +126,7 @@ def school(stats):
                     num = random.randint(1,25)
                     info_gathered[num] = information[num]
                     print(f"Information has been gathered: {information[num]}")
+
         elif choice =="get in a fight":
             fight = random.randint(1,2)
             if fight == 1:
@@ -228,19 +135,28 @@ def school(stats):
                 stats["social_life"] +=15
                 print("happiness +5")
                 stats["happiness"] +=5
-                print("emotinal damage -10")
+                print("emotinal damage -15")
                 stats["emotional_damage"] -=15
+                break
             else:
                 print("You lost and everyone is laughing at you.")
                 print("social life -15")
                 stats["social_life"] -=15
+                if stats["social_life"] <= 0:
+                    stats["depression"] +=20
                 print("happiness -10")
                 stats["happiness"] -=10
-                print("emotinal damage -15")
-                stats["emotional_damage"] -=15
+                if stats["happiness"] <= 0:
+                    stats["depression"] +=20
+                print("emotinal damage +15")
+                stats["emotional_damage"] +=15
+                if stats["emotional_damage"] >= 100:
+                    stats["depression"] +=20
+
         else:
             print("Maybe you spelled something wrong, you might wanna check again.")
             continue
+    return
 
 def friends_house(stats):
     print("You are in your friends house")
@@ -256,6 +172,24 @@ def friends_house(stats):
                 print("You are playing minecraft, it is a chill game")
                 print("Happiness +10")
                 stats["happiness"] +=10
+                break
+            else:
+                print("You and your friend are playing call of duty, you guys are fighting now")
+                print("Happiness -10")
+                stats["happiness"] -=10
+                if stats["happiness"] <= 0:
+                    stats["depression"] +=20
+                print("Emotional damage +10")
+                stats["emotional_damage"]
+                if stats["emotional_damage"] >= 100:
+                    stats["depression"] +=20
+                break
+        if choice == "talk":
+            print("You guys are having a peacefull converstaion")
+            print("Happiness +10")
+            stats["happiness"]+=10
+            break
+    return
 
 def kitchen(stats):
     #Make the fight with your mom  the first time you enter the kitchen , every time you enter it you have to fight, but you get more resources
@@ -275,9 +209,9 @@ def backyard(stats):
 
 print("This game is about you as a teenage self, the goal of this game is to win an argument against your ex in a text message fight about whose fault it was about the break up. In this game you will go through what it feels to be a Ucas student, you have a crazy mom and a crazy ex that is still bugging you about the break up. The obstacles in this game are keeping your grades acceptable, having a social life, doing most of your chores around the house, and dealing with the people in your life. You win this game by defeating the final boss, your ex, the two of you are going to be in an argument of whose fault was it about the break up, the life would be measured as emotional damage, the better you handle the obstacles, the less emotional damage you have, (by the way, if you read this i owe you  a penny) during the fight you can bring up stuff your ex did to you or how bad she was, you can find these useful things in the rooms around the house hidden. Finally, the game would give you options to choose from, and you have to choose the best one. Good luck and hope you live. :)")
 while True:
-    while "depression" < stats["depression"]:
+    while 0 < stats["depression"]:
         True
-    if "depression" >= stats["depression"]:
+    if 0 >= stats["depression"]:
         False
         break
     while True:
