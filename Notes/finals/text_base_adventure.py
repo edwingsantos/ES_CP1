@@ -397,71 +397,76 @@ while True:
     while 0 < stats["depression"]:
         True
         while True:
-            places = ["bedroom", "school","friends house","kitchen", "cementary", "walmart","park","backyard"]
-            print(f"The places you can go to are the following:")
-            for there in places:
-                print(there)
-            where = input("where would you like to go?: ")
-            if where == "bedroom":
+            while True:  # Main loop
+                if stats["depression"] >= 100:
+                    print("You are too depressed to continue. Game over.")
+                    break
+
+    places = ["bedroom", "school","friends house","kitchen", "cementary", "walmart","park","backyard"]
+    print("The places you can go to are the following:")
+    for there in places:
+        print(there)
+    
+    where = input("Where would you like to go?: ").lower()
+    if where == "bedroom":
                 print("You are in your room.")
                 actions_room = ["rest", "check phone", "drawing"]
                 print(f"The actions are: ")
                 for action in actions_room:
                     print(action)
                 bedroom(stats)
-            elif where == "school":
+    elif where == "school":
                 print("You have decided to go to school")
                 actions_school = ["1)talk to favorite teacher", "2)sneak into principals office", "3)get in a fight"]
                 print(f"The actions you can do are the following")
                 for action in actions_school:
                     print(action)
                 school(stats)
-            elif where == "friends house":
+    elif where == "friends house":
                 print("You are in your friends house")
                 actions_friendshouse = ["play video games","talk","start a fight"]
                 print(f"The actions you can do are the following")
                 for action in actions_friendshouse:
                     print(action)
                 friends_house(stats)
-            elif where == "kitchen":
+    elif where == "kitchen":
                 actions_kitchen = ["eat","cook","make matcha","check fridge"]
                 print(f"The actions you can do are the following:")
                 for action in actions_kitchen:
                     print(action)
                 kitchen(stats)
-            elif where == "cementary":
+    elif where == "cementary":
                 print("You have entered the cementary")
                 actions_cementary = ["talk to dead dad","cry"]
                 print(f"The actions you can do are the following:")
                 for action in actions_cementary:
                     print(action)
                 cementary(stats)   
-            elif where == "walmart":
+    elif where == "walmart":
                 print("You have entered walmart")
                 actions_walmart = ["Shout to cashier","steal"]
                 print(f"The actions you can do are the following")
                 for action in actions_walmart:
                     print(action)
                 walmart(stats)
-            elif where == "park":
+    elif where == "park":
                 print("You are at the park")
                 actions_park = ["chill","run","feed ducks"]
                 print(f"Then actions you can do are the following: ")
                 for action in actions_park:
                     print(action)
                 park(stats)
-            elif where == "backyard":
+    elif where == "backyard":
                 print("You are in your backyard")
                 actions_backyard = ["go in the trampoline","read","mow the grass"]
                 print(f"Then actions you can do are the following: ")
                 for action in actions_backyard:
                     print(action)
                 backyard(stats)
-            else:
+    else:
                 print("You maybe spelled something wrong, please re-type")
                 continue
-    while 0 >= stats["depression"]:
+    while 0 <= stats["depression"]:
         False
-        print("you lost")
         break
     
